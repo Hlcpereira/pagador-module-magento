@@ -1,0 +1,56 @@
+{
+    "name": "braspag/magento2-module-braspagpagador",
+    "license": "MIT",
+    "type": "magento2-module",
+    "description": "Braspag Pagador integration for Magento 2",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://repo.magento.com/"
+        }
+    ],
+    "require": {
+        "php": "~7.3.0||~8.1",
+        "magento/module-payment": "*",
+        "magento/module-sales": "*",
+        "magento/module-config": "*",
+        "magento/module-store": "*",
+        "magento/module-quote": "*",
+        "magento/module-checkout": "*",
+        "magento/framework": "*",
+        "braspag/braspagpagador-sdk-adapter":"*",
+        "braspag/mobiledetectlib": "*"
+    },
+    "require-dev": {
+        "allure-framework/allure-phpunit": "~1.2.0",
+        "lusitanian/oauth": "~0.3 <=0.7.0|~0.8.10",
+        "magento/magento-coding-standard": "~1.0.0",
+        "phpmd/phpmd": "@stable",
+        "phpunit/phpunit": "~6.2.0|~6.5.0",
+        "sebastian/phpcpd": "~3.0.0",
+        "squizlabs/php_codesniffer": "2.7.0|3.3.1",
+        "pdepend/pdepend": "2.2.2|2.5.2",
+        "phpunit/phpunit-selenium": ">=1.2",
+        "satooshi/php-coveralls": "^1.0",
+        "magento-ecg/coding-standard":"dev-master",
+        "rregeer/phpunit-coverage-check": "^0.1.4",
+        "friendsofphp/php-cs-fixer": "~1.10.0|~2.10"
+    },
+    "authors":[
+        {
+            "name":"Webjump Core Team",
+            "email":"dev@webjump.com.br"
+        }
+    ],
+    "scripts": {
+        "test": "phpunit"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Braspag\\BraspagPagador\\": ""
+        }
+    }
+}

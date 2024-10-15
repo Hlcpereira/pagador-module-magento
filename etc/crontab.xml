@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+    <group id="default">
+        <job name="braspag_payment_split_transaction_post" instance="Braspag\BraspagPagador\Cron\PaymentSplitTransactionPost" method="execute">
+            <schedule>*/10 * * * *</schedule>
+        </job>
+        <job name="braspaga_pix_cancel_orders" instance="Braspag\BraspagPagador\Cron\PixCancelOrders" method="execute">
+			<schedule>0 0 * * * </schedule>
+		</job>
+        <job name="braspag_card_token_expirate" instance="Braspag\BraspagPagador\Cron\CardTokenExpirate" method="execute">
+			<schedule>*/10 * * * *</schedule>
+		</job>
+    </group>
+</config>

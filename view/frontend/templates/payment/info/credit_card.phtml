@@ -1,0 +1,32 @@
+<?php
+/**
+ * @var \Braspag\BraspagPagador\Block\Payment\Info\CreditCard $block
+ * @see \Braspag\BraspagPagador\Block\Payment\Info\CreditCard
+ */
+$specificInfo = $block->getSpecificInformation();
+$title = $block->escapeHtml($block->getMethod()->getTitle());
+
+?>
+<dl class="payment-method">
+    <dt class="title"><?php /* @noEscape */ echo $title; ?></dt>
+    <?php if ($specificInfo) :?>
+    <dd class="content">
+        <table class="data table">
+            <caption class="table-caption"><?php /* @noEscape */ echo $title; ?></caption>
+            <div class="admin__page-section-item-content">
+                <p><?php echo $block->getCardCcOwner();?></p>
+                <p><?php echo $block->getCardInfo(); ?></p>                
+                <p><?php echo $block->getInstallmentsInfo(); ?></p>
+                <?php if($block->hasTwoCard()):?>
+                            <hr></hr>
+                        <p><?php echo $block->getTwoCardCcOwner();?></p>
+                        <p><?php echo $block->getCardInfoTwoCard(); ?></p>
+                        <p><?php echo $block->getInstallmentsInfoTwoCard(); ?></p>
+                <?php endif;?>
+            </div>
+        </table>
+    </dd>
+    <?php endif;?>
+</dl>
+
+<?php echo $block->getChildHtml()?>

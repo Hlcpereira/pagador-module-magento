@@ -1,0 +1,16 @@
+<?php
+/**
+ * @author      Braspag Core Team <dev@Braspag.com>
+ * @copyright   2016 Braspag (http://www.Braspag.com.br)
+ * @license     http://www.Braspag.com.br  Copyright
+ *
+ * @link        http://www.Braspag.com.br
+ *
+ * @var \Braspag\BraspagPagador\Block\Checkout\Onepage\Transaction\Boleto\Link $this
+ */
+?>
+<?php if ($this->getBoletoUrl()) : ?>
+<hr />
+<a class="action tocart primary" href="<?php echo $this->getBoletoUrl() ?>"
+    target="_blank"><?php echo __('Print Boleto') ?></a>
+<?php endif ?>
